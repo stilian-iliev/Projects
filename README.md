@@ -1,1 +1,1 @@
-My first attempt at making a game using java.
+Random projects I did for fun.
