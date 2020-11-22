@@ -17,18 +17,11 @@ public class Main {
         String positionCC = " ";
 
         boolean over = false;
+        boolean valid=false;
 
         int timer = 1;
 
         String symbol = "";
-
-        String graph = "+-----------------+" +
-                "|  %s  |  %s  |  %s  |" +
-                "+-----------------+" +
-                "|  %s  |  %s  |  %s  |" +
-                "+-----------------+" +
-                "|  %s  |  %s  |  %s  |" +
-                "+-----------------+";
 
         while (true) {
             String input = scan.nextLine();
@@ -38,51 +31,81 @@ public class Main {
             } else {
                 symbol = "O";
             }
-            timer++;
             switch (input) {
                 case "AA":
-                    positionAA = symbol;
+                    if (positionAA.equals(" ")) {
+                        positionAA = symbol;
+                        valid = true;
+                    }
                     break;
                 case "AB":
-                    positionAB = symbol;
+                    if (positionAB.equals(" ")) {
+                        positionAB = symbol;
+                        valid = true;
+                    }
                     break;
                 case "AC":
-                    positionAC = symbol;
+                    if (positionAC.equals(" ")) {
+                        positionAC = symbol;
+                        valid = true;
+                    }
                     break;
                 case "BA":
-                    positionBA = symbol;
+                    if (positionBA.equals(" ")) {
+                        positionBA = symbol;
+                        valid = true;
+                    }
                     break;
                 case "BB":
-                    positionBB = symbol;
+                    if (positionBB.equals(" ")) {
+                        positionBB = symbol;
+                        valid = true;
+                    }
                     break;
                 case "BC":
-                    positionBC = symbol;
+                    if (positionBC.equals(" ")) {
+                        positionBC = symbol;
+                        valid = true;
+                    }
                     break;
                 case "CA":
-                    positionCA = symbol;
+                    if (positionCA.equals(" ")) {
+                        positionCA = symbol;
+                        valid = true;
+                    }
                     break;
                 case "CB":
-                    positionCB = symbol;
+                    if (positionCB.equals(" ")) {
+                        positionCB = symbol;
+                        valid = true;
+                    }
                     break;
                 case "CC":
-                    positionCC = symbol;
+                    if (positionCC.equals(" ")) {
+                        positionCC = symbol;
+                        valid = true;
+                    }
                     break;
             }
+            if (valid){
+                timer++;
+            }
+            valid = false;
             if (positionAA.equals(positionAB) && positionAB.equals(positionAC) && !positionAB.equals(" ")) {
                 over = true;
-            } else if (positionBA.equals(positionBB) && positionBB.equals(positionBC)&& !positionBB.equals(" ")) {
+            } else if (positionBA.equals(positionBB) && positionBB.equals(positionBC) && !positionBB.equals(" ")) {
                 over = true;
-            } else if (positionCA.equals(positionCB) && positionCB.equals(positionCC)&& !positionCB.equals(" ")) {
+            } else if (positionCA.equals(positionCB) && positionCB.equals(positionCC) && !positionCB.equals(" ")) {
                 over = true;
-            } else if (positionAA.equals(positionBA) && positionBA.equals(positionCA)&& !positionBA.equals(" ")) {
+            } else if (positionAA.equals(positionBA) && positionBA.equals(positionCA) && !positionBA.equals(" ")) {
                 over = true;
-            } else if (positionAB.equals(positionBB) && positionBB.equals(positionCB)&& !positionBB.equals(" ")) {
+            } else if (positionAB.equals(positionBB) && positionBB.equals(positionCB) && !positionBB.equals(" ")) {
                 over = true;
-            } else if (positionAC.equals(positionBC) && positionBC.equals(positionCC)&& !positionBC.equals(" ")) {
+            } else if (positionAC.equals(positionBC) && positionBC.equals(positionCC) && !positionBC.equals(" ")) {
                 over = true;
-            } else if (positionAA.equals(positionBB) && positionBB.equals(positionCC)&& !positionBB.equals(" ")) {
+            } else if (positionAA.equals(positionBB) && positionBB.equals(positionCC) && !positionBB.equals(" ")) {
                 over = true;
-            } else if (positionAC.equals(positionBB) && positionBB.equals(positionCA)&& !positionBB.equals(" ")) {
+            } else if (positionAC.equals(positionBB) && positionBB.equals(positionCA) && !positionBB.equals(" ")) {
                 over = true;
             }
             System.out.printf("+-----------------+%n" +
@@ -92,7 +115,7 @@ public class Main {
                     "+-----------------+%n" +
                     "|  %s  |  %s  |  %s  |%n" +
                     "+-----------------+%n", positionAA, positionAB, positionAC, positionBA, positionBB, positionBC, positionCA, positionCB, positionCC);
-            if (over){
+            if (over) {
                 System.out.printf("%s Won the game!", symbol);
                 break;
             }
